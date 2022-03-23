@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  background-color: lightskyblue;
+  background-image: url(../img/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .logo img {
+  max-height: 70px;
+  font-size: 1.75rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li a {
+  font-size: 1.2rem;
+  padding: 1em 2em;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  background: white;
+  color: cyan;
+  border-radius: 35px;
+  filter: drop-shadow(0 0 15px black);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color:#eee;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+/* End of Hamburger Menu */
+/* End of Navbar */
+
+/* Welcome Section */
+#welcome-section {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'LetterOMatic!', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/welcome-section.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+  
+#welcome-section h1 {
+  text-align: center;
+  font-size: 3.5em;
+  color: black;
+  text-shadow: 3px 1px white;
+}
+  
+#welcome-section p {
+  font-size: 1.75em;
+  color: #303030;
+  text-shadow: 3px 1px lightgray;
+}
+/* End of Welcome Section */
+
+/* Project Section */
+#projects {
+  width: 100vw;
+  text-align: center;
+  padding: 5rem 2rem 5rem;
+}
+  
+#projects h2 {
+  font-size: 3.5em;
+  font-family: deneane, sans-serif;
+  background-color: white;
+  background-image: url(../img/grid-project.png);
+  width: 50vw;
+  padding: 5px;
+  color: black;
+  text-shadow: 1px 2px aqua;
+  border-bottom: 0.2rem solid black;
+}
+
+#projects a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.projects-header {
+  max-width: 45vw;
+  margin: 1rem auto 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+#projects .projects-grid a {
+  text-decoration: none;
+  color: darkred;
+}
+
+.projects {
+  background-color: lightslategray;
+  background-image: url(../img/grid-project.png);
+  box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  font-family: deneane, sans-serif;
+}
+
+.project-img {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 0.8rem 0.5rem 1.4rem;
+}
+
+.btn-show {
+  padding: 15px;
+  font-family: tahoma, sans-serif;
+  font-weight: bold;
+  background-color: lightgray;
+  background-image: url(../img/grid-project.png);
+  color: darkred;
+  border: 2px solid black;
+  border-top-right-radius: 35px;
+  border-bottom-left-radius: 35px; 
+  cursor: pointer;
+}
+
+.btn-show:hover {
+  background: none;
+  color: cyan;
+  filter: drop-shadow(0 0 15px crimson);
+}
+/* End of Project Section */
+
+/* Contact Section */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  background-image: url(../img/contact-section.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact-header h2 {
+  font-size: 3em;
+  font-family: deneane, sans-serif;
+  color: crimson;
+}
+
+.contact-header p {
+  font-size: 2em;
+  color: white;
+  padding-bottom: 0.5em;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: white;
+  font-style: 'Lucida Console', sans-serif;
+  font-size: 1.5em;
+  padding: 1em;
+  line-height: 2em;
+}
+
+.contact-detail:hover {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: crimson;
+  filter: drop-shadow(0 0 1rem white);
+}
+/* End of Contact Section */
+
+/* Footer */
+footer {
+  font-size: 1.25em;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: gray;
+  color: white;
+  border-top: 4px solid crimson;
+}
+
+footer a {
+  text-decoration: none;
+  color: #1b1b32;
+  font-weight: bold;
+}
+
+footer a:hover {
+  font-size: 1.5em;
+  filter: drop-shadow(0 0 5px white);
+}
+/* End of Footer */
+
+
+/* Responsive Breakpoint */
+/* Ukuran Tablet */
+@media screen and (max-width: 800px) {
+  .navbar ul li a {
+    font-size: 1.2em;
+    color: white;
+  }
+
+  #welcome-section h1 {
+    font-size: 2.8em;
+  }
+
+  #welcome-section p {
+    font-size: 1.75em;
+  }
+
+  #projects h2 {
+    font-size: 3em;
+  }
+
+  #projects a {
+    font-size: 2em;
+  }
+
+  .project-title {
+    font-size: 1em;
+  }
+
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 600px) {
+  .navbar ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: black;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    z-index: -2;
+    transform: translateY(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  .navbar ul.slide {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  #welcome-section {
+    padding-right: 5vw;
+  }
+  
+  #welcome-section h1 {
+    font-size: 2.2em;
+  }
+  
+  #welcome-section p {
+    font-size: 1.4em;
+  }
+
+  .contact-links a {
+    font-size: 1em;
+    text-shadow: 1px 0 0 black;
+  }
+
+  .contact-detail:hover {
+    font-size: 1.3em;
+  }
+
+  footer {
+    font-size: 1em;
+  }
+}
